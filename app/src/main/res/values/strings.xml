@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RegisterAndLogin</string>
+    <string name="welcome">Registration and Login Demo</string>
+    <string name="tvRegisterTitle">Register a New Account</string>
+    <string name="userID">User ID</string>
+    <string name="password">Password</string>
+    <string name="firstName">First Name</string>
+    <string name="familyName">Family Name</string>
+    <string name="DOB">Date of Birth - MM/DD/YYYY</string>
+    <string name="email">Email Address</string>
+
+    <!-- Button text -->
+    <string name="buLogin">Login</string>
+    <string name="buRegister">Register</string>
+
+</resources>
