@@ -2,14 +2,11 @@ package com.example.registerandlogin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class activity_register
@@ -52,25 +49,28 @@ public class activity_register
         if (etEmail.getText().toString().isEmpty()) inputValid = false;
         if (etPassword.getText().toString().isEmpty()) inputValid = false;
         if (!inputValid){
-            Toast.makeText(this, "Please fill out all fields.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.toMissingField, Toast.LENGTH_LONG).show();
         }
-        // validate email format
+        // Check first name length
+        if (etFirstName.getText().toString().length() < 3 ||
+                etFirstName.getText().toString().length() > 30  ) {
+            inputValid = false;
+            Toast.makeText(this, R.string.toFirstNameLenBad, Toast.LENGTH_LONG).show();
+        }
+        // Validate email format
         if ( !Patterns.EMAIL_ADDRESS.matcher(etEmail.getText().toString()).matches() ) {
             inputValid = false;
-            Toast.makeText(this, "Please enter a valid email address: user@domain.tld",
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.toBadEmail, Toast.LENGTH_LONG).show();
         }
         // Validate Date of Birth format MM/DD/YYYY
-        String MMDDYYYY_format = "^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$";
-        if ( !etDOB.getText().toString().matches(MMDDYYYY_format)) {
+        if ( !etDOB.getText().toString().matches(getString(R.string.format_MMDDYYYY))) {
             inputValid = false;
-            Toast.makeText(this, "Please ensure Date of Birth is in MM/DD/YYYY Format.",
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.toBadDOB, Toast.LENGTH_LONG).show();
         }
         if (!inputValid) return; // Allow user to correct input fields
 
         // Store Id and password hash for login later
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, activityLogin.class);
         intent.putExtra("EXTRA_LOGIN_KEY", etUserID.getText().toString());
         intent.putExtra("EXTRA_PASSWD_KEY", etPassword.getText().toString());
         startActivity(intent);

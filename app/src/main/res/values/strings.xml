@@ -8,9 +8,21 @@
     <string name="familyName">Family Name</string>
     <string name="DOB">Date of Birth - MM/DD/YYYY</string>
     <string name="email">Email Address</string>
+    <string name="ivSplashDesc">MSU University Hall Exterior</string>
+
+    <!-- Toast messages -->
+    <string name="toLoginSuccess">Login Successful.</string>
+    <string name="toLoginFail">Login Failed.</string>
+    <string name="toMissingField">Please fill out all fields.</string>
+    <string name="toFirstNameLenBad">First name must be between 3 and 30 characters long.</string>
+    <string name="toBadEmail">Please enter a valid email address: user@domain.tld</string>
+    <string name="toBadDOB">Please ensure Date of Birth is in MM/DD/YYYY Format.</string>
 
     <!-- Button text -->
     <string name="buLogin">Login</string>
     <string name="buRegister">Register</string>
+
+    <!--String fomats -->
+    <string name="format_MMDDYYYY">^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$</string>
 
 </resources>

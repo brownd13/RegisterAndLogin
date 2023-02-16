@@ -11,19 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RegisterAndLogin"
         tools:targetApi="31">
-        <activity
-            android:name=".activity_register"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:configChanges="orientation"><!-- Enable handling device rotation -->
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <activity
+            android:name=".activityLogin"
+            android:configChanges="orientation"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".activity_register"
+            android:configChanges="orientation"
+            android:exported="false" >
+        </activity>
+    </application>
 </manifest>
